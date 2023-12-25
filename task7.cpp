@@ -46,7 +46,7 @@ Counter counter(0);
 int main() {
     
     thread incrementing(&Counter::Increment, &counter);
-    std::thread decrementing(&Counter::Decrement, &counter);
+    thread decrementing(&Counter::Decrement, &counter);
 
     incrementing.join();
     decrementing.join();
